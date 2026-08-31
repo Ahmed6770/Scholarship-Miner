@@ -30,10 +30,7 @@ function Search() {
 
   return (
     <div>
-      <HeroSearch
-        handleText={handleText}
-        searchText={searchText}
-      />
+      <HeroSearch handleText={handleText} searchText={searchText} />
 
       <div className="mx-auto mt-4 flex max-w-7xl flex-col gap-6 px-4 md:mt-8 md:flex-row md:px-6">
         <Sidebar

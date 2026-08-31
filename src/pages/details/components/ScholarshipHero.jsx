@@ -12,8 +12,7 @@ function ScholarshipHero({ scholarship, isSaved, onSave }) {
   return (
     <section className="mb-8 rounded-3xl bg-white p-6 md:p-8 shadow-xs border border-gray-100">
       <div className="mb-4">
-        <Link
-          className="inline-flex cursor-pointer items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700 md:text-sm"
+        <Link className="inline-flex cursor-pointer items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700 md:text-sm"
           to="/scholarships"
         >
           <ChevronLeft size={18} />
@@ -26,6 +25,14 @@ function ScholarshipHero({ scholarship, isSaved, onSave }) {
           <h1 className="text-2xl font-black text-gray-900 md:text-3xl lg:text-4xl leading-tight">
             {scholarship.title}
           </h1>
+
+          {/* Image mobile*/}
+          <div className="mt-4 mb-1 overflow-hidden rounded-2xl border border-gray-100 shadow-sm h-64 w-full md:hidden">
+            <img className="h-full w-full object-cover"
+              src={scholarship.image}
+              alt={scholarship.university}
+            />
+          </div>
 
           <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-medium text-gray-600 md:text-sm">
             <span className="flex items-center gap-1.5">
@@ -65,8 +72,7 @@ function ScholarshipHero({ scholarship, isSaved, onSave }) {
 
           {/* Action Buttons */}
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <a
-              className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-xs font-bold text-white shadow-xs transition-colors hover:bg-blue-700 md:text-sm cursor-pointer"
+            <a className="flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-xs font-bold text-white shadow-xs transition-colors hover:bg-blue-700 md:text-sm cursor-pointer"
               href={scholarship.applicationUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -75,8 +81,7 @@ function ScholarshipHero({ scholarship, isSaved, onSave }) {
               <ExternalLink size={15} />
             </a>
 
-            <button
-              className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-semibold transition-colors cursor-pointer md:text-sm ${
+            <button className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-semibold transition-colors cursor-pointer md:text-sm ${
                 isSaved
                   ? "border-blue-600 bg-blue-50 text-blue-600"
                   : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
@@ -93,11 +98,10 @@ function ScholarshipHero({ scholarship, isSaved, onSave }) {
           </div>
         </div>
 
-        {/* Image */}
-        <div>
+        {/* Image desktop  */}
+        <div className="hidden md:block">
           <div className="overflow-hidden rounded-2xl md:rounded-3xl border border-gray-100 shadow-sm h-64 sm:h-72 lg:h-80 w-full">
-            <img
-              className="h-full w-full object-cover"
+            <img className="h-full w-full object-cover"
               src={scholarship.image}
               alt={scholarship.university}
             />

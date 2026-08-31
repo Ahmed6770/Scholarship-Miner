@@ -6,6 +6,7 @@ import ScholarshipSidebar from "./components/ScholarshipSidebar";
 import scholarships from "../../data/scholarships.json";
 import { useContext } from "react";
 import { SavedContext } from "../../context/SavedContext";
+import Reveal from "../../components/shared/Reveal";
 
 function Details() {
   const { id } = useParams();
@@ -16,23 +17,32 @@ function Details() {
   return (
     <div className="min-h-screen bg-slate-50/50 py-6 md:py-10">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <ScholarshipHero
-          scholarship={scholarship}
-          isSaved={isSaved}
-          onSave={() => saveScholarship(scholarship.id)}
-        />
-        <QuickStatsBar scholarship={scholarship} />
+        <Reveal>
+          <ScholarshipHero
+            scholarship={scholarship}
+            isSaved={isSaved}
+            onSave={() => saveScholarship(scholarship.id)}
+          />
+        </Reveal>
+
+        <Reveal>
+          <QuickStatsBar scholarship={scholarship} />
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="md:col-span-2">
-            <ScholarshipMainInfo scholarship={scholarship} />
+            <Reveal>
+              <ScholarshipMainInfo scholarship={scholarship} />
+            </Reveal>
           </div>
           <div className="md:col-span-1">
-            <ScholarshipSidebar
-              scholarship={scholarship}
-              isSaved={isSaved}
-              onSave={() => saveScholarship(scholarship.id)}
-            />
+            <Reveal>
+              <ScholarshipSidebar
+                scholarship={scholarship}
+                isSaved={isSaved}
+                onSave={() => saveScholarship(scholarship.id)}
+              />
+            </Reveal>
           </div>
         </div>
       </div>

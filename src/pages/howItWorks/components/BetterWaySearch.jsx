@@ -33,7 +33,7 @@ function BetterWaySearch() {
               </div>
               <div>
                 <h3 className="text-base font-bold text-gray-900 md:text-lg">
-                  Traditi onal Search
+                  Normal Search
                 </h3>
                 <ul className="mt-3 space-y-2">
                   {traditionalPoints.map((point, index) => (
