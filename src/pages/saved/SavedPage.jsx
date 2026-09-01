@@ -2,11 +2,12 @@ import SavedHero from "./components/SavedHero";
 import SavedContent from "./components/SavedContent";
 import { useContext } from "react";
 import { SavedContext } from "../../context/SavedContext";
-import scholarships from "../../data/scholarships.json";
+import { ScholarshipsContext } from "../../context/ScholarshipsContext";
 import Reveal from "../../components/shared/Reveal";
 
 function Saved() {
   const { savedScholarships } = useContext(SavedContext);
+  const { scholarships = [] } = useContext(ScholarshipsContext);
 
   const savedData = scholarships.filter((scholarship) =>
     savedScholarships.includes(scholarship.id),

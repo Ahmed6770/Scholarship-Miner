@@ -3,13 +3,14 @@ import ScholarshipHero from "./components/ScholarshipHero";
 import QuickStatsBar from "./components/QuickStatsBar";
 import ScholarshipMainInfo from "./components/ScholarshipMainInfo";
 import ScholarshipSidebar from "./components/ScholarshipSidebar";
-import scholarships from "../../data/scholarships.json";
 import { useContext } from "react";
 import { SavedContext } from "../../context/SavedContext";
+import { ScholarshipsContext } from "../../context/ScholarshipsContext";
 import Reveal from "../../components/shared/Reveal";
 
 function Details() {
   const { id } = useParams();
+  const { scholarships = [] } = useContext(ScholarshipsContext);
   const scholarship = scholarships.find((item) => item.id == id);
   const { savedScholarships, saveScholarship } = useContext(SavedContext);
   const isSaved = (savedScholarships || []).includes(scholarship?.id);
