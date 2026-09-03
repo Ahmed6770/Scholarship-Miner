@@ -12,6 +12,9 @@ function Details() {
   const { id } = useParams();
   const { scholarships = [] } = useContext(ScholarshipsContext);
   const scholarship = scholarships.find((item) => item.id == id);
+  if (!scholarship) {
+    return <h2>Loading Scholarship...</h2>;
+  }
   const { savedScholarships, saveScholarship } = useContext(SavedContext);
   const isSaved = (savedScholarships || []).includes(scholarship?.id);
 
