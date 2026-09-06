@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import axios from "axios";
 
 export const ScholarshipsContext = createContext();
 
@@ -12,13 +13,10 @@ function ScholarshipsProvider({ children }) {
   useEffect(() => {
     async function loadScholarships() {
       try {
-        const response = await fetch(API_URL);
-        if (!response.ok) {
-          throw new Error("Failed to load scholarships");
-        }
-        const data = await response.json();
-        setScholarships(data);
+        const response = await axios.get(API_URL);
+        setScholarships(response.data);
       } catch (err) {
+        console.log(err);
         setError(err);
       } finally {
         setLoading(false);
