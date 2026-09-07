@@ -14,8 +14,8 @@ function Faq() {
             Frequently Asked Questions
           </h2>
           <p className="mx-auto mt-2 max-w-xl text-xs leading-5 text-gray-600 md:text-base md:leading-7">
-            Find answers to the most common questions about Scholarship Miner and
-            how it helps you discover scholarship opportunities.
+            Find answers to the most common questions about Scholarship Miner
+            and how it helps you discover scholarship opportunities.
           </p>
         </div>
         <div>

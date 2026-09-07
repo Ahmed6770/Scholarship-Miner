@@ -1,5 +1,5 @@
 import React from "react";
-import { Bookmark, ChevronDown } from "lucide-react";
+import { Bookmark } from "lucide-react";
 
 function SavedHero({ savedScholarships = [] }) {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import { Globe, ShieldCheck, Users } from "lucide-react";
 import aboutImg from "../../../assets/images/about.png";
 
 function AboutHero() {

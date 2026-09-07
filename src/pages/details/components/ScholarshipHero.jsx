@@ -82,8 +82,7 @@ function ScholarshipHero({ scholarship, isSaved, onSave }) {
             </a>
 
             <button className={`flex items-center gap-2 rounded-xl border px-5 py-3 text-xs font-semibold transition-colors cursor-pointer md:text-sm ${
-                isSaved
-                  ? "border-blue-600 bg-blue-50 text-blue-600"
+                isSaved ? "border-blue-600 bg-blue-50 text-blue-600"
                   : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
               }`}
               type="button"

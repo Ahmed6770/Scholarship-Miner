@@ -11,13 +11,14 @@ import Reveal from "../../components/shared/Reveal";
 function Details() {
   const { id } = useParams();
   const { scholarships = [] } = useContext(ScholarshipsContext);
+  const { savedScholarships, saveScholarship } = useContext(SavedContext);
+
   const scholarship = scholarships.find((item) => item.id == id);
   if (!scholarship) {
     return <h2>Loading Scholarship...</h2>;
   }
-  const { savedScholarships, saveScholarship } = useContext(SavedContext);
-  const isSaved = (savedScholarships || []).includes(scholarship?.id);
-
+  
+  const isSaved = savedScholarships.includes(scholarship.id);
   return (
     <div className="min-h-screen bg-slate-50/50 py-6 md:py-10">
       <div className="mx-auto max-w-6xl px-4 md:px-6">

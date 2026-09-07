@@ -99,8 +99,7 @@ function ScholarshipSidebar({ scholarship, isSaved, onSave }) {
         <button
           className={`mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-2.5
              text-xs font-semibold shadow-2xs transition-colors cursor-pointer w-full ${
-            isSaved
-              ? "border-blue-600 bg-blue-600 text-white"
+            isSaved ? "border-blue-600 bg-blue-600 text-white"
               : "border-blue-200 bg-white text-blue-600 hover:bg-blue-50"
           }`}
           type="button"

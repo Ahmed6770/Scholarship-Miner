@@ -3,6 +3,24 @@ import { Check } from "lucide-react";
 import heroImg from "../../../assets/images/howItWorks/howItWorks-hero.png";
 
 function AboutDifferent() {
+  const points = [
+    {
+      title: "Curated Opportunities",
+      text: "Handpicked scholarships that are relevant and valuable.",
+    },
+    {
+      title: "Clear & Detailed Information",
+      text: "We provide all the important details you need in one place.",
+    },
+    {
+      title: "Trusted Sources",
+      text: "We partner with official websites and organizations.",
+    },
+    {
+      title: "No Cost, Always",
+      text: "Scholarship Miner is completely free for every student.",
+    },
+  ];
 
   return (
     <section className="py-12 md:py-16 bg-white">
@@ -51,22 +69,3 @@ function AboutDifferent() {
 }
 
 export default AboutDifferent;
-
-  const points = [
-    {
-      title: "Curated Opportunities",
-      text: "Handpicked scholarships that are relevant and valuable.",
-    },
-    {
-      title: "Clear & Detailed Information",
-      text: "We provide all the important details you need in one place.",
-    },
-    {
-      title: "Trusted Sources",
-      text: "We partner with official websites and organizations.",
-    },
-    {
-      title: "No Cost, Always",
-      text: "Scholarship Miner is completely free for every student.",
-    },
-  ];
