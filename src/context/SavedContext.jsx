@@ -10,10 +10,12 @@ function SavedProvidor({ children }) {
     currentSaved === null ? [] : currentSaved,
   );
 
+  // Save to localStorage
   useEffect(() => {
     localStorage.setItem("savedInStorage", JSON.stringify(savedScholarships));
   }, [savedScholarships]);
 
+  // Save function
   function saveScholarship(id) {
     if (savedScholarships.includes(id)) {
       setSavedScholarships(savedScholarships.filter((item) => item !== id));

@@ -11,7 +11,7 @@ const initialFilters = {
 };
 
 function useScholarshipSearch() {
-  const { scholarships = [], loading, error } = useContext(ScholarshipsContext);
+  const { scholarships = [] } = useContext(ScholarshipsContext);
   const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedSort, setSelectedSort] = useState("Newest");
@@ -23,19 +23,15 @@ function useScholarshipSearch() {
     const matchesSearch =
       search === "" ||
       item.title.toLowerCase().includes(search) ||
-      item.university.toLowerCase().includes(search) ||
       item.country.toLowerCase().includes(search) ||
-      item.field.toLowerCase().includes(search) ||
-      item.tags.some((tag) => tag.toLowerCase().includes(search));
+      item.field.toLowerCase().includes(search) 
     return (
       (filters.country === "Any Country" || item.country === filters.country) &&
       (filters.degree === "Any Degree" || item.degree === filters.degree) &&
       (filters.field === "Any Field" || item.field === filters.field) &&
       (filters.funding === "Any Funding" || item.funding === filters.funding) &&
-      (filters.language === "Any Language" ||
-        item.language === filters.language) &&
-      (filters.deadline === "Any Deadline" ||
-        item.deadline === filters.deadline) &&
+      (filters.language === "Any Language" || item.language === filters.language) &&
+      (filters.deadline === "Any Deadline" || item.deadline === filters.deadline)&&
       matchesSearch
     );
   });
