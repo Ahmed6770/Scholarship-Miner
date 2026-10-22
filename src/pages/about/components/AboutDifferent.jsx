@@ -1,6 +1,6 @@
 import React from "react";
 import { Check } from "lucide-react";
-import heroImg from "../../../assets/images/howItWorks/howItWorks-hero.png";
+import heroImg from "../../../assets/images/howItWorks/howItWorks-hero.webp";
 
 function AboutDifferent() {
   const points = [
@@ -39,6 +39,7 @@ function AboutDifferent() {
                 className="w-full max-w-sm md:max-w-md h-auto object-contain mix-blend-multiply"
                 src={heroImg}
                 alt="What Makes Us Different"
+                loading="lazy"
               />
             </div>
 

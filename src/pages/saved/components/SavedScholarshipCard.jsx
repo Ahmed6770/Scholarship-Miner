@@ -16,6 +16,7 @@ function SavedScholarshipCard({ scholarship }) {
               <img className="h-full w-full object-contain"
                 src={scholarship.logo || scholarship.image}
                 alt={scholarship.university}
+                loading="lazy"
               />
             ) : (
               <GraduationCap className="h-9 w-9 text-blue-600" />
@@ -66,6 +67,7 @@ function SavedScholarshipCard({ scholarship }) {
 
           <div className="flex items-center sm:flex-col gap-2 shrink-0">
             <button className="flex h-9 w-9 sm:w-28 cursor-pointer items-center justify-center rounded-xl bg-blue-600 text-white transition-colors hover:bg-blue-700"
+              aria-label="Remove from saved scholarships"
               type="button"
               onClick={() => saveScholarship(scholarship.id)}
             >

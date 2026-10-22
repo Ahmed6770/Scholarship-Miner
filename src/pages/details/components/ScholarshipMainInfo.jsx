@@ -10,7 +10,7 @@ function ScholarshipMainInfo({ scholarship }) {
 ]
 
   return (
-    <div className="space-y-8 rounded-3xl bg-white p-6 md:p-8 border border-gray-100 shadow-2xs">
+    <section className="space-y-8 rounded-3xl bg-white p-6 md:p-8 border border-gray-100 shadow-2xs">
       {/* About */}
       <div>
         <h2 className="text-lg font-bold text-gray-900 md:text-xl">
@@ -110,7 +110,7 @@ function ScholarshipMainInfo({ scholarship }) {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

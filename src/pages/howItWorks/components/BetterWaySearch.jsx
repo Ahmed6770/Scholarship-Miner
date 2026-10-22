@@ -1,7 +1,20 @@
 import React from "react";
 import { Search, Check } from "lucide-react";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../../assets/images/logo.webp";
 
+const traditionalPoints = [
+  "Multiple websites",
+  "Irrelevant results",
+  "Outdated information",
+  "Time-consuming",
+];
+
+const minerPoints = [
+  "One platform, thousands of opportunities",
+  "Relevant and up-to-date results",
+  "Verified sources",
+  "Save time and find more",
+];
 function BetterWaySearch() {
   return (
     <section className="py-12 md:py-16 bg-white">
@@ -55,6 +68,7 @@ function BetterWaySearch() {
                   src={logo}
                   alt="Scholarship Miner logo"
                   className="h-full w-full object-contain"
+                  loading="lazy"
                 />
               </div>
               <div>
@@ -82,17 +96,3 @@ function BetterWaySearch() {
 }
 
 export default BetterWaySearch;
-
-const traditionalPoints = [
-  "Multiple websites",
-  "Irrelevant results",
-  "Outdated information",
-  "Time-consuming",
-];
-
-const minerPoints = [
-  "One platform, thousands of opportunities",
-  "Relevant and up-to-date results",
-  "Verified sources",
-  "Save time and find more",
-];

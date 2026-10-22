@@ -15,6 +15,7 @@ function ScholarshipCard({ scholarship }) {
             <img className="h-full w-full object-cover"
               src={scholarship.image}
               alt={scholarship.university}
+              loading="lazy"
             />
           ) : (
             <div className="flex h-full w-full min-h-[140px] items-center justify-center bg-blue-50">
@@ -44,6 +45,7 @@ function ScholarshipCard({ scholarship }) {
 
               {/* Save Button */}
               <button
+                aria-label ={isSaved ? "Remove from saved" : "Save scholarship"}
                 type="button"
                 onClick={() => saveScholarship(scholarship.id)}
                 className={`flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-xl border transition-colors ${

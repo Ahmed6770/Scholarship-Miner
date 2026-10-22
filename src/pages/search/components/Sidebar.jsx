@@ -73,6 +73,7 @@ function Sidebar({ filters, handleFilter, handleReset }) {
             className="flex cursor-pointer items-center justify-center rounded-lg p-1.5 text-gray-500 hover:bg-gray-100 lg:hidden"
             type="button"
             onClick={() => setIsMobileOpen((prev) => !prev)}
+            aria-label="Toggle search filters"
             aria-expanded={isMobileOpen}
           >
             {isMobileOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
@@ -85,16 +86,17 @@ function Sidebar({ filters, handleFilter, handleReset }) {
         className={`mt-4 ${isMobileOpen ? "block" : "hidden"} md:mt-6 lg:block`}
       >
         {filterOptions.map((filter) => (
-          <div
-            className="mb-4 md:mb-5 last:mb-6 md:last:mb-8"
+          <div className="mb-4 md:mb-5 last:mb-6 md:last:mb-8"
             key={filter.name}
           >
-            <label className="mb-1.5 block text-xs font-semibold text-gray-700 md:text-sm">
+            <label className="mb-1.5 block text-xs font-semibold text-gray-700 md:text-sm"
+            htmlFor={filter.name}
+            >
               {filter.label}
             </label>
 
-            <select
-              className="w-full rounded-xl border border-gray-300 px-3 py-2 text-xs outline-none transition-colors focus:border-blue-600 md:px-4 md:py-2.5 md:text-sm"
+            <select className="w-full rounded-xl border border-gray-300 px-3 py-2 text-xs outline-none transition-colors focus:border-blue-600 md:px-4 md:py-2.5 md:text-sm"
+              id={filter.name}
               value={filters[filter.name]}
               onChange={handleFilter}
               name={filter.name}

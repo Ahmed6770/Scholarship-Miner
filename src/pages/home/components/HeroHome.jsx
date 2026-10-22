@@ -1,9 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image from "../../../assets/images/hero.png";
+import image from "../../../assets/images/hero.webp";
 import "./home.css";
 import { GraduationCap, CheckCircle2, Globe } from "lucide-react";
-
+  const stats = [
+  {
+    number: "10,000+",
+    title: "Scholarships Listed",
+    icon: <GraduationCap />,
+  },
+  {
+    number: "100%",
+    title: "Free & Verified",
+    icon: <CheckCircle2 />,
+  },
+  {
+    number: "50+",
+    title: "Countries Covered",
+    icon: <Globe />,
+  },
+]
 function HeroHome() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-16">
@@ -20,7 +36,7 @@ function HeroHome() {
 
           {/* Image for mobile */}
           <div className="my-4 mx-auto w-2/3 max-w-[240px] md:hidden">
-            <img src={image} alt="Hero" className="hero-image w-full" />
+            <img src={image} alt="Hero image" className="hero-image w-full" />
           </div>
 
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:gap-4 md:justify-start">
@@ -70,21 +86,3 @@ function HeroHome() {
 }
 
 export default HeroHome;
-
-const stats = [
-  {
-    number: "10,000+",
-    title: "Scholarships Listed",
-    icon: <GraduationCap />,
-  },
-  {
-    number: "100%",
-    title: "Free & Verified",
-    icon: <CheckCircle2 />,
-  },
-  {
-    number: "50+",
-    title: "Countries Covered",
-    icon: <Globe />,
-  },
-]

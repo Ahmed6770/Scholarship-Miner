@@ -4,7 +4,7 @@ import SavedScholarshipCard from "./SavedScholarshipCard";
 
 function SavedContent({ savedData = [] }) {
   return (
-    <main className="mx-auto max-w-6xl px-4 md:px-6 pb-12">
+    <div className="mx-auto max-w-6xl px-4 md:px-6 pb-12">
       <div className="space-y-4">
         {savedData.length === 0 ? (
           <EmptyState />
@@ -14,7 +14,7 @@ function SavedContent({ savedData = [] }) {
           ))
         )}
       </div>
-    </main>
+    </div>
   );
 }
 

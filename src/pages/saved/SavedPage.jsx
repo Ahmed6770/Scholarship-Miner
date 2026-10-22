@@ -12,15 +12,16 @@ function Saved() {
   const savedData = scholarships.filter((scholarship) =>
     savedScholarships.includes(scholarship.id),
   );
+
   return (
-    <div className="min-h-[70vh] bg-slate-50/50 pb-12">
+    <main className="min-h-[70vh] bg-slate-50/50 pb-12">
       <Reveal>
         <SavedHero savedScholarships={savedScholarships} />
       </Reveal>
       <Reveal>
         <SavedContent savedData={savedData} />
       </Reveal>
-    </div>
+    </main>
   );
 }
 

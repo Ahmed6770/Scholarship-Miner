@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "../../../assets/images/howItWorks/howItWorks-hero.png";
+import heroImg from "../../../assets/images/howItWorks/howItWorks-hero.webp";
 
 function HowItWorksHero() {
   return (

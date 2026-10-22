@@ -40,7 +40,7 @@ function ScholarshipSidebar({ scholarship, isSaved, onSave }) {
 
   return (
     <aside className="space-y-6">
-      <div className="rounded-3xl bg-white p-6 border border-gray-100 shadow-2xs">
+      <section className="rounded-3xl bg-white p-6 border border-gray-100 shadow-2xs">
         <h3 className="text-base font-bold text-gray-900 md:text-lg mb-4">
           Quick Information
         </h3>
@@ -82,9 +82,9 @@ function ScholarshipSidebar({ scholarship, isSaved, onSave }) {
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="rounded-3xl bg-blue-50/60 p-6 border border-blue-100 text-center">
+      <section className="rounded-3xl bg-blue-50/60 p-6 border border-blue-100 text-center">
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 mb-3">
           <Bell size={22} />
         </div>
@@ -96,8 +96,7 @@ function ScholarshipSidebar({ scholarship, isSaved, onSave }) {
           Save this scholarship and we'll remind you before the deadline.
         </p>
 
-        <button
-          className={`mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-2.5
+        <button className={`mt-4 inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-2.5
              text-xs font-semibold shadow-2xs transition-colors cursor-pointer w-full ${
             isSaved ? "border-blue-600 bg-blue-600 text-white"
               : "border-blue-200 bg-white text-blue-600 hover:bg-blue-50"
@@ -111,7 +110,7 @@ function ScholarshipSidebar({ scholarship, isSaved, onSave }) {
           />
           {isSaved ? "Saved" : "Save Scholarship"}
         </button>
-      </div>
+      </section>
     </aside>
   );
 }

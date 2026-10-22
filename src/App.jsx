@@ -12,7 +12,7 @@ import ScrollToTop from "./components/layout/ScrollToTop";
 
 function App() {
   return (
-    <div>
+    <>
       <ScholarshipsProvider>
         <SavedProvidor>
           <ScrollToTop>
@@ -31,7 +31,7 @@ function App() {
           </ScrollToTop>
         </SavedProvidor>
       </ScholarshipsProvider>
-    </div>
+    </>
   );
 }
 

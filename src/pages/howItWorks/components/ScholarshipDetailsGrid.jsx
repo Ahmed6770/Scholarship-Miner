@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Calendar,
-  DollarSign,
-  GraduationCap,
-  Gift,
-  FileText,
-  ExternalLink,
-} from "lucide-react";
+import {Calendar, DollarSign, GraduationCap, Gift, FileText, ExternalLink,} from "lucide-react";
 
-function ScholarshipDetailsGrid() {
   const cards = [
     {
       icon: Calendar,
@@ -47,7 +39,7 @@ function ScholarshipDetailsGrid() {
       desc: "Apply directly on the official website.",
     },
   ];
-
+function ScholarshipDetailsGrid() {
   return (
     <section className="py-12 md:py-16 bg-slate-50/50">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
@@ -66,12 +58,9 @@ function ScholarshipDetailsGrid() {
           {cards.map((card, idx) => {
             const Icon = card.icon;
             return (
-              <div
-                key={idx}
-                className="flex flex-col items-center text-center rounded-2xl bg-white p-5 sm:p-6 border border-gray-100 shadow-xs"
-              >
-                <div
-                  className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl ${card.iconBg}`}
+              <div className="flex flex-col items-center text-center rounded-2xl bg-white p-5 sm:p-6 border border-gray-100 shadow-xs"
+                key={idx}>
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl ${card.iconBg}`}
                 >
                   <Icon className="h-6 w-6" />
                 </div>

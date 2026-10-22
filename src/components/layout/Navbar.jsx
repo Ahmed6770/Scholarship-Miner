@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Bookmark } from "lucide-react";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.webp";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -57,6 +57,8 @@ function Navbar() {
           <button className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg text-gray-600 transition-colors hover:bg-gray-100 hover:text-blue-600 md:hidden"
             type="button"
             onClick={toggleMenu}
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>

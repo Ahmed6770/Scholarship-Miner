@@ -8,7 +8,7 @@ import Reveal from "../../components/shared/Reveal.jsx";
 
 function Home() {
   return (
-    <section>
+    <main>
       <Reveal>
         <HeroHome />
       </Reveal>
@@ -24,7 +24,7 @@ function Home() {
       <Reveal>
         <CTA />
       </Reveal>
-    </section>
+    </main>
   );
 }
 

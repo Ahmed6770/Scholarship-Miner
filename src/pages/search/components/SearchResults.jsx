@@ -15,6 +15,7 @@ function SearchResults({ results, totalResults, selectedSort, setSelectedSort })
 
         <select
           className="rounded-xl border border-gray-300 px-3 py-1.5 text-xs outline-none transition-colors duration-200 focus:border-blue-600 md:px-4 md:py-2 md:text-sm"
+          aria-label="Sort scholarships"
           onChange={(event) => setSelectedSort(event.target.value)}
           value={selectedSort}
         >

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../../assets/images/logo.webp";
 
 function HowItWorksCTA() {
   return (
@@ -17,6 +17,7 @@ function HowItWorksCTA() {
                 src={logo}
                 alt="Logo"
                 className="h-full w-full object-contain"
+                loading="lazy"
               />
             </div>
 

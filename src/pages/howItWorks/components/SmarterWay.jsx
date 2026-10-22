@@ -1,7 +1,21 @@
 import React from "react";
 import { X, Check, ArrowRight, ArrowDown } from "lucide-react";
-import withoutImg from "../../../assets/images/howItWorks/howItWorks-without.png";
-import withImg from "../../../assets/images/howItWorks/howItWorks-with.png";
+import withoutImg from "../../../assets/images/howItWorks/howItWorks-without.webp";
+import withImg from "../../../assets/images/howItWorks/howItWorks-with.webp";
+
+const withoutPoints = [
+  "Endless searches with scattered results",
+  "Unclear or missing information",
+  "Hard to find reliable sources",
+  "Missed deadlines and lost opportunities",
+];
+
+const withPoints = [
+  "Search thousands of opportunities in one place",
+  "Clear and detailed scholarship information",
+  "Trusted sources you can rely on",
+  "Never miss a deadline again",
+];
 
 function SmarterWay() {
   return (
@@ -31,6 +45,7 @@ function SmarterWay() {
                 className="w-44 md:w-56 h-auto object-contain shrink-0"
                 src={withoutImg}
                 alt="Without Scholarship Miner"
+                loading="lazy"
               />
               <div>
                 <div className="mb-4 flex items-center gap-2 text-rose-600">
@@ -81,6 +96,7 @@ function SmarterWay() {
                 className="w-44 md:w-56 h-auto object-contain shrink-0 order-1 sm:order-2"
                 src={withImg}
                 alt="With Scholarship Miner"
+                loading="lazy"
               />
             </div>
           </div>
@@ -91,17 +107,3 @@ function SmarterWay() {
 }
 
 export default SmarterWay;
-
-const withoutPoints = [
-  "Endless searches with scattered results",
-  "Unclear or missing information",
-  "Hard to find reliable sources",
-  "Missed deadlines and lost opportunities",
-];
-
-const withPoints = [
-  "Search thousands of opportunities in one place",
-  "Clear and detailed scholarship information",
-  "Trusted sources you can rely on",
-  "Never miss a deadline again",
-];

@@ -1,6 +1,29 @@
 import React from "react";
 import { Search, ListFilter, ExternalLink } from "lucide-react";
 
+const howItWorks = [
+  {
+    id: 1,
+    title: "Search & Filter",
+    description:
+      "Explore thousands of scholarships filtered by country, degree level, and study field.",
+    icon: Search,
+  },
+  {
+    id: 2,
+    title: "Bookmark & Organize",
+    description:
+      "Save your top choices to your favorites list to compare and track application deadlines.",
+    icon: ListFilter,
+  },
+  {
+    id: 3,
+    title: "Review & Apply",
+    description:
+      "Access verified requirements and apply directly on official university and organization portals.",
+    icon: ExternalLink,
+  },
+];
 function HowItWorks() {
   return (
     <section className="bg-slate-50 py-8 md:py-16">
@@ -53,27 +76,3 @@ function HowItWorks() {
 }
 
 export default HowItWorks;
-
-const howItWorks = [
-  {
-    id: 1,
-    title: "Search & Filter",
-    description:
-      "Explore thousands of scholarships filtered by country, degree level, and study field.",
-    icon: Search,
-  },
-  {
-    id: 2,
-    title: "Bookmark & Organize",
-    description:
-      "Save your top choices to your favorites list to compare and track application deadlines.",
-    icon: ListFilter,
-  },
-  {
-    id: 3,
-    title: "Review & Apply",
-    description:
-      "Access verified requirements and apply directly on official university and organization portals.",
-    icon: ExternalLink,
-  },
-];

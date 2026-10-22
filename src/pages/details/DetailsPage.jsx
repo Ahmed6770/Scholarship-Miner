@@ -20,7 +20,7 @@ function Details() {
   
   const isSaved = savedScholarships.includes(scholarship.id);
   return (
-    <div className="min-h-screen bg-slate-50/50 py-6 md:py-10">
+    <main className="min-h-screen bg-slate-50/50 py-6 md:py-10">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <Reveal>
           <ScholarshipHero
@@ -51,7 +51,7 @@ function Details() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.webp";
 
 function Footer() {
   return (
@@ -9,7 +9,7 @@ function Footer() {
         {/* Logo */}
         <div className="col-span-2 md:col-span-1">
           <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo} alt="Scholarship Miner" className="h-9 md:h-11" />
+            <img src={logo} alt="Scholarship Miner logo" className="h-9 md:h-11" loading="lazy" />
             <h2 className="text-base font-bold md:text-lg">Scholarship Miner</h2>
           </Link>
 

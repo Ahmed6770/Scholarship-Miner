@@ -18,8 +18,8 @@ function HeroSearch({ handleText, searchText }) {
         {/* Search bar */}
         <div className="mt-4 rounded-xl border border-gray-200 bg-white p-2 shadow-xs md:mt-5 md:rounded-2xl">
           <div className="relative flex items-center">
-            <input
-              className="w-full rounded-lg border-0 py-2 pl-3 pr-10 text-xs text-gray-800 outline-none placeholder:text-gray-400 focus:ring-0 md:py-2.5 md:pl-4 md:text-sm"
+            <input className="w-full rounded-lg border-0 py-2 pl-3 pr-10 text-xs text-gray-800 outline-none placeholder:text-gray-400 focus:ring-0 md:py-2.5 md:pl-4 md:text-sm"
+              aria-label="Search scholarships"
               type="text"
               value={searchText}
               onChange={handleText}
