@@ -1,7 +1,6 @@
-import React from "react";
 import ScholarshipCard from "./ScholarshipCard";
 
-function SearchResults({ results, totalResults, selectedSort, setSelectedSort }) {
+function SearchResults({ results, totalResults, selectedSort, setSelectedSort, loading }) {
   return (
     <section className="flex-1">
       {/* Header */}
@@ -26,7 +25,12 @@ function SearchResults({ results, totalResults, selectedSort, setSelectedSort })
 
       {/* Cards */}
       <div className="space-y-4 md:space-y-6">
-        {results.length === 0 ? (
+        {loading ? (
+          <div className="flex h-64 flex-col items-center justify-center text-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-3 border-blue-600 border-t-transparent" />
+            <p className="mt-3 text-sm text-gray-500">Loading scholarships...</p>
+          </div>
+        ) : results.length === 0 ?( 
           <div className="flex h-64 flex-col items-center justify-center text-center md:h-80">
             <span className="text-4xl md:text-6xl">🔍</span>
             <h3 className="mt-3 text-lg font-bold text-gray-900 md:text-2xl">

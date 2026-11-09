@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import HeroSearch from "./components/HeroSearch";
 import Sidebar from "./components/Sidebar";
 import SearchResults from "./components/SearchResults";
 import Pagination from "./components/Pagination";
 import useScholarshipSearch from "../../hooks/useScholarshipSearch";
+import { ScholarshipsContext } from "../../context/ScholarshipsContext";
+import { useContext } from "react";
+
 
 function Search() {
+  const {loading} = useContext(ScholarshipsContext);
   const {
     results,
     currentResults,
@@ -45,6 +49,7 @@ function Search() {
             totalResults={results.length}
             selectedSort={selectedSort}
             setSelectedSort={setSelectedSort}
+            loading = {loading}
           />
 
           <Pagination

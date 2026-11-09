@@ -42,7 +42,7 @@ const faqs = [
 function Faq() {
   const [openQuestion, setOpenQuestion] = useState(null);
   function toggleAccordion(id) {
-    openQuestion === id ? setOpenQuestion(null) : setOpenQuestion(id);
+    setOpenQuestion(openQuestion === id ? null : id);
   }
   
   return (

@@ -10,15 +10,21 @@ import Reveal from "../../components/shared/Reveal";
 
 function Details() {
   const { id } = useParams();
-  const { scholarships = [] } = useContext(ScholarshipsContext);
+  const { scholarships = [], loading } = useContext(ScholarshipsContext);
   const { savedScholarships, saveScholarship } = useContext(SavedContext);
-
-  const scholarship = scholarships.find((item) => item.id == id);
-  if (!scholarship) {
-    return <h2>Loading Scholarship...</h2>;
+  
+  if (loading) {
+    return (
+      <div className="flex h-64 flex-col items-center justify-center text-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-3 border-blue-600 border-t-transparent" />
+        <p className="mt-3 text-sm text-gray-500">Loading scholarship...</p>
+      </div>
+    );
   }
   
-  const isSaved = savedScholarships.includes(scholarship.id);
+  const scholarship = scholarships.find((item) => item.id == id);
+  const isSaved = savedScholarships.includes(scholarship?.id);
+  
   return (
     <main className="min-h-screen bg-slate-50/50 py-6 md:py-10">
       <div className="mx-auto max-w-6xl px-4 md:px-6">

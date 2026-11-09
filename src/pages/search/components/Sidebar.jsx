@@ -6,48 +6,28 @@ function Sidebar({ filters, handleFilter, handleReset }) {
   const { scholarships = [] } = useContext(ScholarshipsContext);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  function getFilterOptions(key) {
-    return [...new Set(scholarships.map((item) => item[key]).filter(Boolean))].sort();
-  }
-
-  const filterOptions = [
-    {
-      label: "Country",
-      name: "country",
-      defaultOption: "Any Country",
-      options: getFilterOptions("country"),
-    },
-    {
-      label: "Degree Level",
-      name: "degree",
-      defaultOption: "Any Degree",
-      options: getFilterOptions("degree"),
-    },
-    {
-      label: "Field of Study",
-      name: "field",
-      defaultOption: "Any Field",
-      options: getFilterOptions("field"),
-    },
-    {
-      label: "Funding Type",
-      name: "funding",
-      defaultOption: "Any Funding",
-      options: getFilterOptions("funding"),
-    },
-    {
-      label: "Language",
-      name: "language",
-      defaultOption: "Any Language",
-      options: getFilterOptions("language"),
-    },
-    {
-      label: "Deadline",
-      name: "deadline",
-      defaultOption: "Any Deadline",
-      options: getFilterOptions("deadline"),
-    },
+    const filterOptions = [
+    { name: "country", label: "Country", defaultLabel: "Any Country" },
+    { name: "degree", label: "Degree Level", defaultLabel: "Any Degree" },
+    { name: "field", label: "Field of Study", defaultLabel: "Any Field" },
+    { name: "funding", label: "Funding Type", defaultLabel: "Any Funding" },
+    { name: "language", label: "Language", defaultLabel: "Any Language" },
+    { name: "deadline", label: "Deadline", defaultLabel: "Any Deadline" },
   ];
+
+// Prints select options from the current data
+function getFilterOptions(key) {
+  const options = [];
+
+  for (const item of scholarships) {
+    const value = item[key];
+
+    if (value && !options.includes(value)) {
+      options.push(value);
+    }
+  }
+  return options.sort();
+}
 
   return (
     <section className="h-fit w-full rounded-2xl border border-gray-200 bg-white p-4 shadow-xs md:rounded-3xl md:p-6 lg:w-80">
@@ -90,7 +70,7 @@ function Sidebar({ filters, handleFilter, handleReset }) {
             key={filter.name}
           >
             <label className="mb-1.5 block text-xs font-semibold text-gray-700 md:text-sm"
-            htmlFor={filter.name}
+              htmlFor={filter.name}
             >
               {filter.label}
             </label>
@@ -101,9 +81,9 @@ function Sidebar({ filters, handleFilter, handleReset }) {
               onChange={handleFilter}
               name={filter.name}
             >
-              <option>{filter.defaultOption}</option>
+              <option value="">{filter.defaultLabel}</option>
 
-              {filter.options.map((option) => (
+              {getFilterOptions(filter.name).map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>
